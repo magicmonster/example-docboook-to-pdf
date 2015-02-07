@@ -42,11 +42,44 @@
               </artifactItems>
             </configuration>
           </execution>
+          <execution>
+            <id>unpack-xsl</id>
+            <phase>package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>net.sf.docbook</groupId>
+                  <artifactId>docbook-xsl</artifactId>
+                  <version>1.78.1</version>
+                  <!-- resources or ns-resources? -->
+                  <classifier>ns-resources</classifier>
+                  <type>zip</type>
+                  <overWrite>yes</overWrite>
+                  <outputDirectory>docbook-xsl</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
   <dependencies>
+    <!--<dependency>-->
+      <!--<groupId>net.sf.docbook</groupId>-->
+      <!--<artifactId>docbook-xsl</artifactId>-->
+      <!--<version>1.78.1</version>-->
+      <!--<type>pom</type>-->
+    <!--</dependency>-->
+    <!--home edition-->
+    <dependency>
+      <groupId>net.sf.saxon</groupId>
+      <artifactId>Saxon-HE</artifactId>
+      <version>9.6.0-4</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
