@@ -68,17 +68,37 @@
     </plugins>
   </build>
   <dependencies>
-    <!--<dependency>-->
-      <!--<groupId>net.sf.docbook</groupId>-->
-      <!--<artifactId>docbook-xsl</artifactId>-->
-      <!--<version>1.78.1</version>-->
-      <!--<type>pom</type>-->
-    <!--</dependency>-->
     <!--home edition-->
     <dependency>
       <groupId>net.sf.saxon</groupId>
       <artifactId>Saxon-HE</artifactId>
       <version>9.6.0-4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>fop</artifactId>
+      <version>1.1</version>
+      <!-- workaround http://stackoverflow.com/questions/21351179/maven-dependency-exclusions-same-artifact-id-issue -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.avalon.framework</groupId>
+          <artifactId>avalon-framework-api</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.avalon.framework</groupId>
+          <artifactId>avalon-framework-impl</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avalon.framework</groupId>
+      <artifactId>avalon-framework-api</artifactId>
+      <version>4.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.avalon.framework</groupId>
+      <artifactId>avalon-framework-impl</artifactId>
+      <version>4.3.1</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
