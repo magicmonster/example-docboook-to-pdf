@@ -21,7 +21,7 @@ import java.io.OutputStream;
  */
 public class RunSaxon {
     /**
-     *  mvn exec:java -Dexec.mainClass=com.magicmonster.docbook.example.RunSaxon
+     *  mvn clean install exec:java -Dexec.mainClass=com.magicmonster.docbook.example.RunSaxon
      * @param args
      * @throws Exception
      */
